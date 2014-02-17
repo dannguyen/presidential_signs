@@ -1,0 +1,17 @@
+h1 Listing signing_statements
+
+table.table.table-striped.table-condensed
+  thead
+
+  tbody
+    - @signing_statements.each do |signing_statement|
+      tr
+        td = link_to signing_statement.id, edit_signing_statement_path(signing_statement)
+        td style="width:30%;"
+          p = signing_statement.notes 
+          => link_to signing_statement.title, signing_statement
+          => link_to '(edit)', edit_signing_statement_path(signing_statement)
+        td = signing_statement.named_act
+        td = signing_statement.named_bill
+        td = signing_statement.named_statute
+        td = signing_statement.named_p_law

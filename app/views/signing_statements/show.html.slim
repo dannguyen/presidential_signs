@@ -1,0 +1,22 @@
+article.signing-statement
+  h1.title = @signing_statement.title
+  div.text
+    = make_markdown @signing_statement.text
+
+section.president
+  h5 President
+  div.name = link_to @president.popular_name, @president
+
+section.bill
+  h5 Bill Info
+
+  div During Congress #{{@signing_statement.congress_number}}
+  div Act #{{@signing_statement.named_act}}
+  div Bill #{{@signing_statement.named_bill}}
+  div Statute #{{@signing_statement.named_statute}}
+  div Law: #{{@signing_statement.named_p_law}}
+
+
+ul
+  li = link_to 'Edit', edit_signing_statement_path(@signing_statement)
+  li = link_to 'Back', signing_statements_path

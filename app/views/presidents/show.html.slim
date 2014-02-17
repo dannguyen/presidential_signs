@@ -1,0 +1,17 @@
+
+
+article.president
+  h1 = @president.popular_name
+
+  - @president.terms.each do |term|
+    section.term
+      h2 = term.span    
+
+      ul
+        - term.signing_statements.each do |statement|
+          li = link_to statement.title, statement
+
+
+= link_to 'Edit', edit_president_path(@president)
+'|
+= link_to 'Back', presidents_path

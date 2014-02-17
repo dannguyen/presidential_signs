@@ -1,0 +1,17 @@
+<%= form_for(@signing_statement) do |f| %>
+  <% if @signing_statement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@signing_statement.errors.count, "error") %> prohibited this signing_statement from being saved:</h2>
+
+      <ul>
+      <% @signing_statement.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

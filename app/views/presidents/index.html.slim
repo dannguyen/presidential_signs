@@ -1,0 +1,16 @@
+h1 Listing presidents
+
+table class="table table-striped"
+
+  - @presidents.each do |president|
+    tbody
+      tr
+        td = link_to president.popular_name, president
+
+      - president.terms.each do |term|
+        tr
+          td
+          td = term.span
+          td = term.signing_statements.count
+
+

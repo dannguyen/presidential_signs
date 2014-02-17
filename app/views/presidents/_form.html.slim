@@ -1,0 +1,9 @@
+= form_for @president do |f|
+  - if @president.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@president.errors.count, "error")} prohibited this president from being saved:"
+      ul
+        - @president.errors.full_messages.each do |message|
+          li = message
+
+  .actions = f.submit 'Save'

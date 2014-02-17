@@ -1,0 +1,25 @@
+<h1>Listing signing_statements</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @signing_statements.each do |signing_statement| %>
+      <tr>
+        <td><%= link_to 'Show', signing_statement %></td>
+        <td><%= link_to 'Edit', edit_signing_statement_path(signing_statement) %></td>
+        <td><%= link_to 'Destroy', signing_statement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Signing statement', new_signing_statement_path %>
